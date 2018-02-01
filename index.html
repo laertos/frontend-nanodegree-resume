@@ -31,8 +31,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Uncomment the <script> tag below when you're ready to add an interactive Google Map to your resume!
   -->
 <!-- <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu2vki8u1_QG6vpWkMC_es4FJyACOPle8&callback=initMap"
-  type="text/javascript"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu2vki8u1_QG6vpWkMC_es4FJyACOPle8&callback=initializeMap&libraries=places" type="text/javascript"></script>  
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
@@ -47,7 +47,11 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     -->
     <div id="header" class="center-content clear-fix">
       <ul id="topContacts" class="flex-box"></ul>
-    </div>
+       <!-- <li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>
+   		<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>
+   		<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>
+   		<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li> -->
+	</div>
     <div style="clear: both;"></div>
     <div id="workExperience" class="gray">
       <h2>Work Experience</h2>
@@ -64,8 +68,13 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <div id="lets-connect" class="dark-gray">
       <h2 class="orange center-text">Let's Connect</h2>
         <ul id="footerContacts" class="flex-box">
+        <!--
+        <li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>
+   		<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>
+   		<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>
+   		<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li> 
       </ul>
-    </div>
+    </div> -->
   </div>
 
   <!-- "HTML is loaded by the browser in the order it appears in the file. If the JavaScript is loaded first and it is supposed to affect the HTML below it, it might not work, as the JavaScript would be loaded before the HTML it is supposed to work on. Therefore, putting JavaScript near the bottom of the HTML page is often the best strategy."

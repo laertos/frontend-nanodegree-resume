@@ -14,6 +14,10 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+ul #topContacts {
+  display: inline-block;
+}
+
 .clear-fix {
   overflow: auto;
 }
@@ -58,9 +62,7 @@ h3,
 h4,
 h5 {
   padding: 10px 5%;
-
 }
-
 
 .date-text {
   font-style: italic;
@@ -132,7 +134,7 @@ a {
   background-color: #484848;
 }
 
-.flex-box {
+li .flex-box {
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
@@ -165,6 +167,7 @@ ul {
 
 img {
   padding: 10px;
+  
 }
 
 span {
@@ -219,3 +222,18 @@ span {
     display: block;
   }
 }
+
+.projectImage {
+  height: 150px;
+  width: 150px;
+}
+
+li .flex-item{
+  display: inline-block;
+}
+
+#footerContacts {
+  padding: 25px;
+}
+
+
