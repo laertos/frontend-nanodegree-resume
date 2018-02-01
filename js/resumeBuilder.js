@@ -10,7 +10,7 @@ var bio = {
 	"pictureURL": "images/me.jpg",
 	"welcomeMessage": "Hi, I am Laert and I like to code. Thanks for checking out my resume.",
 	"skills": ["HTML5", "CSS3", "Javascript", "React.js"]
-}
+};
 
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#header").prepend(formattedLocation);
@@ -82,7 +82,7 @@ function workFunction(item,index){
 	var formattedJobDesc = HTMLworkDescription.replace("%data%", work.jobs[index].jobDescription);
 
 	$(".work-entry").append(formattedEmployer,formattedTitle,formattedDatesWorked,formattedLocation,formattedJobDesc);
-};
+}
 work.display();  
 
 var project = {
@@ -112,7 +112,7 @@ function projectFunction(item,index){
 	var formattedimage = HTMLprojectImage.replace("%data%",project.projects[index].image);
 
 	$(".project-entry").append(formattedtitle,formatteddates,formatteddescription,formattedimage);
-};
+}
 project.display();
 
 var education = {
