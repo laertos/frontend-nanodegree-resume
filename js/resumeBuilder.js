@@ -7,66 +7,58 @@ var bio = {
 		"github": "github.com/laertos",
 		"location": "Chicago, IL"
 	},
-	"pictureURL": "images/me.jpg",
+	"biopic": "images/me.jpg",
 	"welcomeMessage": "Hi, I am Laert and I like to code. Thanks for checking out my resume.",
-	"skills": ["HTML5", "CSS3", "Javascript", "React.js"]
-};
+	"skills": ["HTML5", "CSS3", "Javascript", "React.js"],
 
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#header").prepend(formattedLocation);
-$("#footerContacts").prepend(formattedLocation);
-
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#header").prepend(formattedGithub);
-$("#footerContacts").prepend(formattedGithub);
-
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#header").prepend(formattedEmail);
-$("#footerContacts").prepend(formattedEmail);
-
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#header").prepend(formattedMobile);
-$("#footerContacts").prepend(formattedMobile);
-
+display: function() {
+var formattedName = HTMLheaderName.replace("%data%", bio.name);	
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formattedRole);
-
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").prepend(formattedName);
-
-var formattedPicture = HTMLbioPic.replace("%data%", bio.pictureURL);
-$("#header").append(formattedPicture);
-
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+var formattedPicture = HTMLbioPic.replace("%data%", bio.biopic);
 var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#header").append(formattedWelcome);
 
-if(bio.skills.length > 0) {
-$("#header").append(HTMLskillsStart);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
-$("#header").append(formattedSkills);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
-$("#header").append(formattedSkills);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
-$("#header").append(formattedSkills);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills[3]);
-$("#header").append(formattedSkills);
-}
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").append(formattedPicture);
+$("#header").append(formattedWelcome);
+$('#topContacts, #footerContacts').append(formattedMobile + formattedEmail +
+      formattedGithub + formattedLocation);
+
+
+if (bio.skills.length > 0) {
+	$('#header').append(HTMLskillsStart);
+	for(i in bio.skills) {
+		$("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+	}
+  }
+ } 
+};
+bio.display(); 
+
+
 
 var work = {
 	"jobs": [
 	{
 	"title": "Front End Web Developer",
 	"employer": "Tok Digital Agency",
-	"datesWorked": "2017 - Present",
+	"dates": "2017 - Present",
 	"location": "Tirana, Albania",
-	"jobDescription": "Using markup languages like HTML to create user-friendly web pages. Maintaining and improving website. Optimizing applications for maximum speed."
+	"description": "Using markup languages like HTML to create user-friendly web pages."
+	+ " Maintaining and improving website. Optimizing applications for maximum speed."
 	},
 	{
 	"title": "AML Analyst",
 	"employer": "US Bank",
-	"datesWorked": "2016 - 2017",	
+	"dates": "2016 - 2017",	
 	"location": "Chicago, IL",
-	"jobDescription": "Ensure compliance with all AML, information security, and suspicious activity reporting requirements, policies, and procedures. Remain current on legal, regulatory AML and OFAC requirements."
+	"description": "Ensure compliance with all AML, information security,"
+	+ " and suspicious activity reporting requirements, policies, and procedures."
+	+ " Remain current on legal, regulatory AML and OFAC requirements."
 	}
   ],
 display: function(){
@@ -77,43 +69,47 @@ display: function(){
 function workFunction(item,index){
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[index].employer);
 	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[index].title);
-	var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[index].datesWorked);
+	var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[index].dates);
 	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[index].location);
-	var formattedJobDesc = HTMLworkDescription.replace("%data%", work.jobs[index].jobDescription);
+	var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[index].description);
 
-	$(".work-entry").append(formattedEmployer,formattedTitle,formattedDatesWorked,formattedLocation,formattedJobDesc);
+	$(".work-entry").append(formattedEmployer,formattedTitle,formattedWorkDates,formattedLocation,formattedWorkDescription);
 }
 work.display();  
 
-var project = {
+var projects = {
 	"projects": [
 	{
 		"title": "My Reads",
 		"dates": "2017",
-		"description": "Created a React application from scratch and utilize React components to manage the user interface. MyReads is a virtual bookcase to store your books and track what you're reading. Using the provided Books API, searched for books and added them to a bookshelf as a React component. Used React's setState to build the functionality to move books from one shelf to another.", 
-		"image": "images/myreads.jpg"
+		"description": "Created a React application from scratch and utilize React components to manage"
+		+ " the user interface. MyReads is a virtual bookcase to store your books and track what you're" 
+		+ " reading. Using the provided Books API, searched for books and added them to a bookshelf as a" 
+		+ " React component. Used React's setState to build the functionality to move books from one shelf to another.", 
+		"images": ["images/myreads.jpg"]
 	},
 	{
 		"title": "Classic Arcade Game",
 		"dates": "2017",
-		"description": "After being provided visual assets and a game loop engine, used these tools to add a number of entities to the game including the player characters and enemies to recreate the classic arcade game Frogger.",
-		"image" : "images/frooger.png"
+		"description": "After being provided visual assets and a game loop engine, used these tools to add a number of entities"
+		+ " to the game including the player characters and enemies to recreate the classic arcade game Frogger.",
+		"images" : ["images/frooger.png"]
 	}
   ],
 display: function() {
 	$("#projects").append(HTMLprojectStart);
-	project.projects.forEach(projectFunction);
+	projects.projects.forEach(projectFunction);
  }	
 };
 function projectFunction(item,index){
-	var formattedtitle = HTMLprojectTitle.replace("%data%",project.projects[index].title);
-	var formatteddates = HTMLprojectDates.replace("%data%",project.projects[index].dates);
-	var formatteddescription = HTMLprojectDescription.replace("%data%",project.projects[index].description);
-	var formattedimage = HTMLprojectImage.replace("%data%",project.projects[index].image);
+	var formattedtitle = HTMLprojectTitle.replace("%data%",projects.projects[index].title);
+	var formatteddates = HTMLprojectDates.replace("%data%",projects.projects[index].dates);
+	var formatteddescription = HTMLprojectDescription.replace("%data%",projects.projects[index].description);
+	var formattedimage = HTMLprojectImage.replace("%data%",projects.projects[index].images);
 
 	$(".project-entry").append(formattedtitle,formatteddates,formatteddescription,formattedimage);
 }
-project.display();
+projects.display();
 
 var education = {
 	"schools": [
@@ -122,7 +118,7 @@ var education = {
 	"degree": "Bachelor of Science",
 	"dates": "2012 - 2015",
 	"location": "Chicago, IL",
-	"majors": "Finance"
+	"majors": ["Finance"]
 	}
 	],
 	"onlineCourses": [
