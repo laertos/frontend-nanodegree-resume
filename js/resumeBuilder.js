@@ -31,7 +31,7 @@ $('#topContacts, #footerContacts').append(formattedMobile + formattedEmail +
 
 if (bio.skills.length > 0) {
 	$('#header').append(HTMLskillsStart);
-	for(i in bio.skills) {
+	for(var i in bio.skills) {
 		$("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
 	}
   }
@@ -48,17 +48,14 @@ var work = {
 	"employer": "Tok Digital Agency",
 	"dates": "2017 - Present",
 	"location": "Tirana, Albania",
-	"description": "Using markup languages like HTML to create user-friendly web pages."
-	+ " Maintaining and improving website. Optimizing applications for maximum speed."
+	"description": "Using markup languages like HTML to create user-friendly web pages. Maintaining and improving website. Optimizing applications for maximum speed."
 	},
 	{
 	"title": "AML Analyst",
 	"employer": "US Bank",
 	"dates": "2016 - 2017",	
 	"location": "Chicago, IL",
-	"description": "Ensure compliance with all AML, information security,"
-	+ " and suspicious activity reporting requirements, policies, and procedures."
-	+ " Remain current on legal, regulatory AML and OFAC requirements."
+	"description": "Ensure compliance with all AML, information security, and suspicious activity reporting requirements, policies, and procedures. Remain current on legal, regulatory AML and OFAC requirements."
 	}
   ],
 display: function(){
@@ -82,17 +79,13 @@ var projects = {
 	{
 		"title": "My Reads",
 		"dates": "2017",
-		"description": "Created a React application from scratch and utilize React components to manage"
-		+ " the user interface. MyReads is a virtual bookcase to store your books and track what you're" 
-		+ " reading. Using the provided Books API, searched for books and added them to a bookshelf as a" 
-		+ " React component. Used React's setState to build the functionality to move books from one shelf to another.", 
+		"description": "Created a React application from scratch and utilize React components to manage the user interface. MyReads is a virtual bookcase to store your books and track what you're reading. Using the provided Books API, searched for books and added them to a bookshelf as a React component. Used React's setState to build the functionality to move books from one shelf to another.", 
 		"images": ["images/myreads.jpg"]
 	},
 	{
 		"title": "Classic Arcade Game",
 		"dates": "2017",
-		"description": "After being provided visual assets and a game loop engine, used these tools to add a number of entities"
-		+ " to the game including the player characters and enemies to recreate the classic arcade game Frogger.",
+		"description": "After being provided visual assets and a game loop engine, used these tools to add a number of entities to the game including the player characters and enemies to recreate the classic arcade game Frogger.",
 		"images" : ["images/frooger.png"]
 	}
   ],
