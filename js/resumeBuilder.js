@@ -31,9 +31,13 @@ $('#topContacts, #footerContacts').append(formattedMobile + formattedEmail +
 
 if (bio.skills.length > 0) {
 	$('#header').append(HTMLskillsStart);
-	for(var i in bio.skills) {
-		$("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
-	}
+	if (bio.skills.length > 0) {
+      $('#header').append(HTMLskillsStart);
+      bio.skills.forEach(function (skill) {
+         var formattedBioSkills =HTMLskills.replace('%data%', skill);
+         $('#skills').append(formattedBioSkills);
+      });
+   }
   }
  } 
 };
